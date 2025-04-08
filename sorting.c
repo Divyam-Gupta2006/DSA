@@ -9,26 +9,6 @@ void swap(int *a, int *b) {
 }
 
 
-void selection_sort(int arr[],int n){
-       // get the ize of the array  
-    int i,min,j;
-    
-    for(i=0;i<n-1;i++){
-        min=i;
-        for(j=i;j<n;j++){
-            if(arr[j]<arr[min]){
-                
-                min=j;
-            }
-            
-        }
-        swap(&arr[i],&arr[min]);
-
-
-
-    }
-}
-
 
 
 void printArray(int arr[], int size) {
@@ -53,17 +33,37 @@ void bubble_sort(int arr[],int n){
 }
 
 
-void insertion_sort(int arr[],int n){
-    int i,j;
-    j=i;
-    while(j>0 && arr[j-1]>arr[j]){
-        swap(&arr[j],&arr[j-1]);
-        j++;
+void insertion_sort(int arr[], int n) {
+    int i, j;
+    for (i = 1; i < n; i++) {
+        j = i;
+        while (j > 0 && arr[j-1] > arr[j]) {
+            swap(&arr[j], &arr[j-1]);
+            j--;
+        }
     }
-
 }
 
 
+void selection_sort(int arr[],int n){
+    // get the ize of the array  
+ int i,min,j;
+ 
+ for(i=0;i<n-1;i++){
+     min=i;
+     for(j=i;j<n;j++){
+        if(arr[j]<arr[min]){
+             
+            min=j;
+        }
+         
+     }
+     swap(&arr[i],&arr[min]);
+
+
+
+ }
+}
 
 
 
